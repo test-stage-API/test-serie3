@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    main {
+        java.srcDir 'src'
+    }
+    test {
+        java.srcDir 'test'
+    }
+}
+
+tasks.register('runEx', JavaExec) {
+    group = 'application'
+    mainClass.set('Main')
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
