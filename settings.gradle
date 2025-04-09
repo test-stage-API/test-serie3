@@ -10,6 +10,6 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.9.0'
 }
 
-rootProject.name = 'test-serie3'
+rootProject.name = 'test-serie5'
 
 include("Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5")
